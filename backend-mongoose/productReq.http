@@ -1,0 +1,42 @@
+###Add new product 
+POST http://localhost:8008/product-api/product
+Content-Type: application/json
+
+[
+  {
+    "name": "Laptop",
+    "price": 56000,
+    "brand": "HP",
+    "description": "HP laptop with high-end processor"
+  },
+  {
+    "name": "Smartphone",
+    "price": 32000,
+    "brand": "Samsung",
+    "description": "Samsung Galaxy mid-range phone"
+  },
+  {
+    "name": "Monitor",
+    "brand": "Dell",
+    "price": 3000,
+    "description": "Samsung Galaxy mid-range phone"
+  }
+]
+
+
+###Read all products
+GET http://localhost:8008/product-api/products
+
+### UPdate product by using id
+PUT http://localhost:8008/product-api/product/68edf2a5cbb67470cfd9c8e4
+Content-Type: application/json
+
+{
+    "name":"Laptop",
+    "price":56000,
+    "brand":"Macbook M4",
+    "description":"Macbook latop high end processor"
+}
+
+### delete product by using id
+DELETE  http://localhost:8008/product-api/product/68edf2a5cbb67470cfd9c8e4

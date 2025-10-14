@@ -1,0 +1,32 @@
+POST http://localhost:8008/user-api/User
+Content-Type: application/json
+
+{
+    "name":"Sairam",
+    "age":18,
+    "email":"sairam@gmail.com",
+    "password":"sairam"
+}
+
+###Read all users
+GET  http://localhost:8008/user-api/users
+
+###Read user by name
+GET http://localhost:8008/user-api/user?name=Sairam
+
+###Read user by name
+GET http://localhost:8008/user-api/user/68ecf0f893eff1b416de3313
+
+###Read user by id
+PUT http://localhost:8008/user-api/user/68eddc6eb568baaedadad007
+Content-Type: application/json
+
+{
+    "_id":"68eddc6eb568baaedadad007",
+    "name":"Sairam Anumala",
+    "age":18,
+    "email":"saianumala02@gmail.com"
+}
+
+###Delete user by id
+DELETE http://localhost:8008/user-api/user/68edc8d4ce986e8cd20d403d

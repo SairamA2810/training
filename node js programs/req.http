@@ -1,0 +1,46 @@
+### http reqs
+### get request
+GET http://localhost:3000/test
+
+### post request
+POST http://localhost:3000/test
+Content-Type: "application/json"
+
+### put request
+PUT http://localhost:3000/test
+Content-Type:"application/json"
+
+### delete request
+DELETE http://localhost:3000/test
+
+
+###user api
+###read users
+GET http://localhost:3000/users
+
+###get user by id by using url parameters
+GET http://localhost:3000/users/200
+
+###get user by name by using query parameters
+GET http://localhost:3000/users-list?name=ram
+
+###ADD NEW USER 
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+    "id":300,
+    "name":"krishna"
+}
+
+### UPDATE USER
+PUT http://localhost:3000/userUpdate
+Content-Type: application/json
+
+{
+    "id":300,
+    "name":"krish"
+}
+
+### DELETE USER
+DELETE http://localhost:3000/userDelete?id=100

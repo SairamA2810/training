@@ -1,0 +1,57 @@
+GET http://localhost:8008/user-api/users
+
+###GET USER BY ID USING URL PARAM
+GET http://localhost:8008/user-api/users/2
+
+### POST NEW USER
+POST http://localhost:8008/user-api/users
+Content-Type: application/json
+
+{
+    
+    "name":"Karthik",
+    "class":"IT",
+    "age":21
+}
+
+### UPDATE USER DATA BY ID
+PUT http://localhost:8008/user-api/user
+Content-Type: application/json
+
+{
+    "name":"Ram",
+    "age":21,
+}
+
+### DELETE USER USING ID
+DELETE http://localhost:8008/user-api/users/2
+
+### get user data by user name
+GET http://localhost:8008/user-api/user?name=Karthik
+
+### GET PRODUCTS DATA
+GET http://localhost:8008/product-api/products
+
+### POST NEW PRODUCT DATA
+POST http://localhost:8008/product-api/products
+Content-Type: application/json
+
+{
+    "id":2,
+    "name":"Bike",
+    "price":50000
+}
+
+### GET PRODUCT BY NAME USING QUERY PARAMETER
+GET http://localhost:8008/product-api/product?name=Bike
+
+### UPDATE PRODUCT WITH ID BY USING URL PARAMETER
+PUT http://localhost:8008/product-api/products/1
+Content-Type: application/json
+
+{
+    "name":"Car"
+}
+
+### DELETE PRODUCT WITH NAME USING QUERY PARAM
+DELETE http://localhost:8008/product-api/products?id=2
