@@ -1,0 +1,32 @@
+.first{
+    color:red;
+    font-size:3rem;
+    border:2px solid black;
+    text-align: center;
+    padding:30px;
+    margin:80px;
+    background-color: aquamarine;
+
+
+}
+.second{
+    color:rgb(170, 223, 48);
+    font-size:3rem;
+    border:2px solid black;
+    text-align: center;
+    padding:50px;
+    margin:80px;
+    background-color: rgb(146, 127, 255);
+    text-decoration: overline red dotted;
+}
+/* body{
+    background-image: url(./img2.jpg);
+} */
+img{
+    width: 290px;
+    float:left;
+}
+.third{
+    text-align: justify;
+
+}

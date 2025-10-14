@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mx-auto bg-primary w-25 text-light mt-2">User Data </h1>
+        <form class="form mx-auto w-50 mt-3 ">
+            <div class="form-floating">
+                <input type="text" class="form-control" placeholder="name" pattern="[A-Za-z]+">
+                <label for="name" class="form-label">Name</label>
+            </div>
+            <div class="form-floating">
+                <input type="number" placeholder="Age"  class="form-control mt-2" step="1">
+                <label for="Age">Age</label>
+            </div>
+            <div class="form-floating">
+                <input type="text" class="form-control mt-2" placeholder="Mobile Number" pattern="-\d+" required>
+                <label for="Mobile">Mobile Number</label>
+            </div>
+            <input type="submit" value="submit" class="btn btn-success mt-4">
+        </form>
+            
+        </div>
+    </div>
+    <script src="./dist/index.js"></script>
+</body>
+</html>

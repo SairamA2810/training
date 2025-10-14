@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .para{
+            font-size:clamp(20px,10vw,100px);
+        }
+        img{
+            width:100%;
+            max-width: 400px;
+        }
+        .parent{
+            display:flex;
+            flex-wrap:wrap;
+        }
+        p{
+            font-size:clamp(10px,10vw,20px)
+        }
+        .child{
+            width:200px; 
+            height:300px;
+        }
+        .child1{
+            background-color: red;
+        }
+        .child2{
+            background-color: green;
+        }
+        .child3{
+            background-color: blue;
+        }
+        @media screen and (max-width:600px){
+            body{
+                background-color: blue;
+            }
+        }
+        @media screen and (min-width:600px){
+            body{
+                background-color: red;
+            }
+        }
+        @media screen and (min-width:700px){
+            body{
+                background-color: yellow;
+            }
+        }
+    </style>
+</head>
+<body>
+    <p class="para">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet, facere.
+    </p>
+    <img src="./img3.jpg" alt="not found">
+    <div class="parent">
+        <div class="child child1">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora excepturi impedit adipisci asperiores repudiandae nesciunt.
+            </p>
+        </div>
+        <div class="child child2">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora excepturi impedit adipisci asperiores repudiandae nesciunt.
+            </p>
+        </div>
+        <div class="child child3">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora excepturi impedit adipisci asperiores repudiandae nesciunt.
+            </p>
+        </div>
+    </div>
+</body>
+</html>

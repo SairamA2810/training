@@ -1,0 +1,46 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    min-height:15000px;
+}
+.profile{
+    width:300px;
+    height:400px;
+    text-align: center;
+    margin: auto;
+    margin-top: 30px;
+    border:2px solid black;
+    padding:20px;
+    position: relative;
+    border-radius: 20px;
+    background-color: aliceblue;
+}
+.profile-img{
+    width:80%;
+    height:230px;
+    border-radius: 50%;
+    padding-bottom: 20px;
+}
+.logo{
+    width:100px;
+    border-radius: 120px;
+    position:absolute;
+    top:-30px;
+    right:-30px
+
+}
+.wt-logo{
+    width:80px;
+    position:sticky;
+    bottom:10px;
+    left:1220px;
+    top:10px;
+}
+.insta-logo{
+    width:120px;
+    position:absolute;
+    top:-20px;
+    left:-50px;
+}
