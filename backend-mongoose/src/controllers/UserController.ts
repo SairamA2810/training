@@ -39,13 +39,12 @@ export const loginUser=async(req:Request,res:Response)=>{
             }
             else{
                 // create token using JWT by using sign() method
-                let signedToken=sign({name:userObj.name},'secretesociety',{expiresIn:120})
+                let signedToken=sign({name:userObj.name},process.env["SECRET"]!,{expiresIn:120})
                 res.status(200).send({message:"user token generated successfully",token:signedToken,payload:userObj})
             }
         
     }
 }
-
 
 
 
@@ -94,4 +93,10 @@ export const deleteUserById=async(req:Request,res:Response)=>{
     let userObj=await UserModel.findOneAndDelete({"_id":userId})
     // send response
     res.status(200).send({Message:"user",payload:userObj}) 
+}
+
+
+// controller fucntion to create a protected route
+export const protectedRoute=(req:Request,res:Response)=>{
+    res.status(200).send({message:"This is the senstivie information.."})
 }

@@ -1,12 +1,24 @@
-POST http://localhost:8008/user-api/User
+POST http://localhost:8008/user-api/user
 Content-Type: application/json
 
 {
-    "name":"Sairam",
+    "name":"Sairm",
     "age":18,
     "email":"sairam@gmail.com",
     "password":"sairam"
 }
+
+### user login(Authentication)
+POST http://localhost:8008/user-api/user-login
+Content-Type: application/json
+
+{
+    "name":"Saisrm",
+    "age":18,
+    "email":"sairam@gmail.com",
+    "password":"sairam"
+}
+
 
 ###Read all users
 GET  http://localhost:8008/user-api/users
@@ -30,3 +42,7 @@ Content-Type: application/json
 
 ###Delete user by id
 DELETE http://localhost:8008/user-api/user/68edc8d4ce986e8cd20d403d
+
+### req for prottected route
+GET http://localhost:8008/user-api/protected
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiU2FpcmFtIiwiaWF0IjoxNzYwNTA1NDE3LCJleHAiOjE3NjA1MDU1Mzd9.iXRtYXbLB4R1FFzqkNMnfPXw_rOwvtk7hDiXLSHf1co

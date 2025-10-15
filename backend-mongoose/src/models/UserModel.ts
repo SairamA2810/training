@@ -8,14 +8,14 @@ const userSchema=new Schema<UserI>({
         type:String, //uppercamel case
         required:[true, "Name is required"],
         minLength:[4, "Min length is 4"],
-        maxlength:[6, "Max length is 6"],
+        maxlength:[16, "Max length is 16"],
         unique:[true,"User is already existed.."] //it will prevent from duplication
     },
     age:{
         type:Number,
         required:[true, "Age is required"],
         min:[18, "Minimum Age is 18"],
-        max:[29, "Maximum Age is 29"]
+        max:[59, "Maximum Age is 59"]
     },
     email:{
         type:String,

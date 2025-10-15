@@ -2,20 +2,29 @@ import express, { NextFunction, Request, Response } from 'express';
 import { connect } from 'mongoose';
 import { userRouter } from './routes/UserRoute';
 import { productRouter } from './routes/ProductRoute';
+import {config} from 'dotenv'
+import cors from 'cors'
+
+// call config
+config()
 
 const app=express();
-const port=8008;
+const port=process.env["PORT"];
 
+// accept frontetnd sever
+app.use(cors({
+    origin:"http://localhost:5173"
+}))
 // Middleware body parser
 app.use(express.json());
 
 // MongoDB connection
-const dburl="mongodb://localhost:27017/demodb";
+const dburl=process.env["DBURL"]!
 
 connect(dburl)
-    .then(() => {
+    .then(()=>{
         console.log("Database connected successfully...");
-        app.listen(port, () => {
+        app.listen(port,()=>{
             console.log(`Server listening on port ${port}...`);
         });
     })
