@@ -35,12 +35,25 @@ export const loginUser=async(req:Request,res:Response)=>{
             // use compare() method in bcrypt module
             let status=await compare(password,userObj.password)
             if(status===false){
-                res.status(401).send({Message:"Invalid password.."})
+                res.status(401).send({message:"Invalid password.."})
             }
             else{
                 // create token using JWT by using sign() method
-                let signedToken=sign({name:userObj.name},process.env["SECRET"]!,{expiresIn:120})
-                res.status(200).send({message:"user token generated successfully",token:signedToken,payload:userObj})
+                  // remove password in useroBj
+                let {password,...userData}=userObj.toObject()
+
+                // let signedToken=sign({name:userObj.name},process.env["SECRET"]!,{expiresIn:30})
+                let signedToken=sign({user:userObj},process.env["SECRET"]!,{expiresIn:30}) //for page refresh
+                // store token in cookie
+                res.cookie("token",signedToken,{
+                    httpOnly:true,
+                    sameSite:"none",
+                    secure:true,
+                    maxAge:24*60*60*1000
+                })
+
+              
+                res.status(200).send({message:"user token generated successfully",token:signedToken,payload:userData})
             }
         
     }
@@ -93,6 +106,17 @@ export const deleteUserById=async(req:Request,res:Response)=>{
     let userObj=await UserModel.findOneAndDelete({"_id":userId})
     // send response
     res.status(200).send({Message:"user",payload:userObj}) 
+}
+
+export const logout=(req:Request,res:Response)=>{
+    res.clearCookie("token",{
+                    httpOnly:true,
+                    sameSite:"none",
+                    secure:true,
+                    maxAge:5000
+                })
+    res.status(200).send({message:"user token cleared successfully..."})
+
 }
 
 

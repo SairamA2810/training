@@ -4,6 +4,8 @@ import { userRouter } from './routes/UserRoute';
 import { productRouter } from './routes/ProductRoute';
 import {config} from 'dotenv'
 import cors from 'cors'
+import cookieParser from 'cookie-parser'
+import { verifyToken } from './middlewares/verify';
 
 // call config
 config()
@@ -13,8 +15,12 @@ const port=process.env["PORT"];
 
 // accept frontetnd sever
 app.use(cors({
-    origin:"http://localhost:5173"
+    origin:"http://localhost:5173",
+    credentials:true // we need to tell cors to accept crendentials..
 }))
+
+app.use(cookieParser())
+
 // Middleware body parser
 app.use(express.json());
 
@@ -34,6 +40,11 @@ connect(dburl)
     });
 
 
+    // refresh
+    app.get('/refresh',verifyToken,async(req:Request,res:Response)=>{
+        let userObj=(req as any).user
+        res.send({user:userObj})
+    })
 // redirect userApp when path starts with /user-api
 app.use("/user-api",userRouter)
 

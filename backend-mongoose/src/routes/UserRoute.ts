@@ -1,6 +1,6 @@
 import {Router} from 'express'
 import expressAsyncHandler from 'express-async-handler'
-import { addNewUser, deleteUserById, loginUser, protectedRoute, readAllUsers, readUserById, readUserByName, updateUserById } from '../controllers/UserController'
+import { addNewUser, deleteUserById, loginUser, logout, protectedRoute, readAllUsers, readUserById, readUserByName, updateUserById } from '../controllers/UserController'
 import { verifyToken } from '../middlewares/verify'
 
 export const userRouter=Router()
@@ -28,3 +28,6 @@ userRouter.delete("/user/:id",deleteUserById)
 
 // route to access the protected 
 userRouter.get('/protected',verifyToken,protectedRoute)
+
+// route for logout
+userRouter.get('/logout',logout)
